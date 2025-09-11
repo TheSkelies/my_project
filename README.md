@@ -2,4 +2,4 @@
 ## Проект
 Этот репозиторий является каркасом для будущего веб-приложения.
 ## Ссылки
-- [Публичная страница на GitHub Pages](https://theskelies.github.io/my_project/)
+- [Публичная страница на GitHub Pages](https://theskelies.github.io/my_project/src/index.html)
