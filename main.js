@@ -37,7 +37,7 @@ openBtn.addEventListener('click', () => {
 });
 closeBtn.addEventListener('click', () => dlg.close('cancel'));
 form?.addEventListener('submit', (e) => {
- // валидация см. 1.4.2; при успехе закрываем окно
+ // Валидация см. 1.4.2; при успехе закрываем окно
 });
 dlg.addEventListener('close', () => { lastActive?.focus(); });
 // Esc по умолчанию вызывает событие 'cancel' и закрывает <dialog>
@@ -61,6 +61,9 @@ form?.addEventListener('submit', (e) => {
  }
  // 3) Успешная «отправка» (без сервера)
  e.preventDefault();
+ alert("Письмо отправленно (умрёте через 7 дней)");
+ dlg.close();
+ form.reset();
  // Если форма внутри <dialog>, закрываем окно:
  document.getElementById('contactDialog')?.close('success');
  form.reset();
