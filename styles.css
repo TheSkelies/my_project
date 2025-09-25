@@ -1,17 +1,191 @@
+:root {
+    /* Палитра */
+    --color-bg: #242529;
+    --color-fg: #d60b0b;
+    --color-muted: #ffffff;
+    --color-primary: #0061ff;
+    --color-danger: #b00020;
+
+    /* Типографика и размеры */
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 16px;
+    --space-4: 24px;
+    --space-5: 40px;
+
+    /* Скругления и тени */
+    --radius: 12px;
+    --shadow: 0 1px 2px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.08);
+}
+
+html { scroll-behavior: smooth; }
+
+
 dialog { padding: 1.25rem; border: none; border-radius: 12px; }
 dialog::backdrop { background: rgba(0,0,0,.5); }
 .form-actions {
     display:flex;
     gap:.5rem;
     margin-top:1rem;
-    /*flex-direction: column;*/
 }
+
+
+.cards-section {
+    border: 3px solid #333;
+    border-radius: 30px;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 1200px;
+    background: linear-gradient(135deg, #4d4e50 0%, #191c22 100%);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #c12222 0%, #3d0c0e 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-title {
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-description {
+    opacity: 0;
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.card:hover .card-title {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.card:hover .card-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h3, p {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+h3 { font-size: 28px; }
+p { line-height: 1.6; font-size: 16px; }
+
+p1 {
+    margin: 0;
+    color: #3498db;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.row img {
+    width: 500px;
+    height: 500px;
+}
+
+.header-wrapper {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0;
+    border: 3px solid #2c3e50;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+header {
+    background: linear-gradient(45deg, #ec4b7d, #e40000);
+    padding: 30px;
+    color: white;
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+
+
+
 
 /* БАЗА: читаемость и предсказуемость размеров */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial,
-sans-serif; line-height: 1.5; }
+body {
+    font-family: var(--font-body);
+    line-height: 1.5;
+    padding: var(--space-3);
+    background: var(--color-bg);
+    color: var(--color-fg);
+}
 /* Формы: размеры, отступы, визуальный порядок */
 label { display: block; margin: 0.5rem 0 0.25rem; }
 input, select, textarea, button {
@@ -23,11 +197,21 @@ input, select, textarea, button {
  background: #fff;
 }
 
+/* Состояния ссылок */
+.nav__link:link { color: var(--color-fg); }
+.nav__link:visited { color: var(--color-muted); }
+.nav__link:hover { color: var(--color-primary); }
+.nav__link:active { opacity: 0.8; }
 
+/* Фокус для всех интерактивных элементов */
+:where(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
 
 /* Кнопка по умолчанию */
 button, [type="submit"] {
- background: #0a84ff;
+ background: #7e1212;
  color: #fff;
  border: none;
  cursor: pointer;

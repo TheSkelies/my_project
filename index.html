@@ -3,42 +3,148 @@
 <head>
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="styles.css">
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Главная - Страшно очень страшно</title>
- <meta name="description" content="Краткое описание главной страницы вашего сайта">
- <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Страшно очень страшно</title>
+    <meta name="description" content="Краткое описание главной страницы вашего сайта">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
  <!-- Шапка сайта -->
- <header>
- <h1>Страшно очень страшно</h1>
- <!-- Главное меню навигации -->
- <nav>
- <ul>
- <li><a href="index.html">Главная</a></li>
- <li><a href="about.html">О нас</a></li>
- <li><a href="contacts.html">Контакты</a></li>
- </ul>
- </nav>
- </header>
+ <div class="header-wrapper">
+     <header>
+         <div class="header-content">
+             <div class="logo">
+                 <h1>Страшно очень страшно</h1>
+             </div>
+             <nav class="nav">
+                 <ul class="nav__list">
+                     <li class="nav__item"><a class="nav__link" href="about.html">О нас</a></li>
+                     <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+                 </ul>
+             </nav>
+         </div>
+     </header>
+ </div>
+
  <!-- Уникальное основное содержимое страницы -->
  <main>
- <h1>Добро пожаловать на наш сайт!</h1>
+     <h1>Добро пожаловать на наш сайт!</h1>
+         <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
  <!-- Секция 1 с якорем -->
  <section id="services">
- <h2>Наши услуги</h2>
- <p>Мы предоставляем незабывемый опыт в разнообразных комнатах и лабиринтах страха</p>
- <a href="about.html">Подробнее о лабиринтах</a> <!-- Якорная ссылка внутри страницы -->
+     <div class="cards-section">
+         <h2 class="section-title">Наши Услуги</h2>
+         <div class="cards-container">
+             <div class="card">
+                 <div class="card-content card-title">
+                     <h3>Личные хоррор-квесты</h3>
+                 </div>
+                 <div class="card-content card-description">
+                     <p>Мы создаём тематические квесты ужасов с уникальными сюжетами, пугающими декорациями и актёрами, которые подарят вашим гостям адреналин и незабываемые впечатления.</p>
+                 </div>
+             </div>
+
+             <div class="card">
+                 <div class="card-content card-title">
+                     <h3>Персонализированные сценарии</h3>
+                 </div>
+                 <div class="card-content card-description">
+                     <p>Подберём сюжет под любую аудиторию — от лёгкого мистического триллера до максимально жёсткого хоррора. Атмосфера, уровень страха и стиль пугающих сцен регулируются по вашему запросу.</p>
+                 </div>
+             </div>
+
+             <div class="card">
+                 <div class="card-content card-title">
+                     <h3>Профессиональные актёры</h3>
+                 </div>
+                 <div class="card-content card-description">
+                     <p>Профессиональные актёры в гриме и костюмах оживят ваши кошмары. Мы умеем работать с эмоциями гостей — от лёгкой паники до настоящего ужаса.</p>
+                 </div>
+             </div>
+
+             <div class="card">
+                 <div class="card-content card-title">
+                     <h3>Декорации и спецэффекты</h3>
+                 </div>
+                 <div class="card-content card-description">
+                     <p>Туман, кровь, скрип дверей, тени и внезапные появления — мы создаём антураж, который погружает с первых шагов. Используем современное оборудование для света и звука, чтобы страх был максимально реалистичным.</p>
+                 </div>
+             </div>
+
+
+             <div class="card">
+                 <div class="card-content card-title">
+                     <h3>События и праздники</h3>
+                 </div>
+                 <div class="card-content card-description">
+                     <p>Наши квесты идеально подходят для:</p>
+                     <p>• Корпоративов и тимбилдингов</p>
+                     <p>• Вечеринок на Хэллоуин</p>
+                     <p>• Квестов для компаний друзей</p>
+                     <p>• Ярмарок, фестивалей и торговых центров</p>
+                 </div>
+             </div>
+
+         </div>
+     </div>
  </section>
  <!-- Секция 2 с якорем -->
  <section id="portfolio">
- <h2>Портфолио</h2>
- <p>Наши лабиринты </p>
+
+     <div class="cards-section">
+         <h2 class="section-title">Портфолио</h2>
+
+         <div class="row">
+             <img src="assets/house.jpg" alt="">
+             <img src="assets/hospital.jpg" alt="">
+         </div>
+
+         <div class="cards-container">
+             <div class="card">
+                 <div class="card-content card-title">
+                     <h3>Дом забытых душ</h3>
+                 </div>
+                 <div class="card-content card-description">
+                     <p>Локация: заброшенный особняк</p>
+                     <p>Особенности: актёры в роли «жителей дома», система скрытых комнат и тайных ходов, аудио сопровождение с эффектом присутствия.</p>
+                 </div>
+             </div>
+             <div class="card">
+                 <div class="card-content card-title">
+                     <h3>Психиатрическая клиника №13</h3>
+                 </div>
+                 <div class="card-content card-description">
+                     <p>Локация: развлекательный центр</p>
+                     <p>Особенности: полноценный сюжет с актёрами-пациентами, звуковые спецэффекты, тематический грим, возможность выбрать уровень страха.</p>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+
+
+
  </section>
  <!-- Секция 3 с якорем -->
  <section id="contacts">
- <h2>Контактная информация</h2>
+
+    <div class="cards-section">
+        <h2 class="section-title">Контактная информация</h2>
+
+        <li class="nav__item"><a class="nav__link" href="contacts.html">Подробнее</a></li>
+        <p>Телефон: +7 (123) 456-78-90</p>
+
+
+        <video controls preload="metadata" playsinline>
+            <source src="assets/RICKROLL.mp4" type="video/mp4">
+        </video>
+
+        <h2>Наша почта</h2>
+        <p1>Сотрудничество: StrashnoOchenStrashno_sotr@mail.com</p1>
+
+    </div>
+
      <!-- Кнопка открытия модалки -->
      <button id="openDialog" type="button">Тех. поддержка</button>
      <!-- Модалка с формой -->
@@ -73,14 +179,12 @@
              </div>
          </form>
      </dialog>
- <p>Наши контакты</p>
- <a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
+
  </section>
  </main>
  <!-- Подвал сайта -->
  <footer>
- <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
- <p>Телефон: +7 (123) 456-78-90</p>
+ <p1>&copy; 2023 Страшно очень страшно. Все права защищены.</p1>
  </footer>
 </body>
 </html>
