@@ -21,6 +21,7 @@
                  <ul class="nav__list">
                      <li class="nav__item"><a class="nav__link" href="about.html">О нас</a></li>
                      <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+                     <li class = "nav__item"><a class = "nav__link" href="#contacts">Связаться с нами</a></li> <!-- Якорная ссылка внутри страницы -->
                  </ul>
              </nav>
          </div>
@@ -29,13 +30,12 @@
 
  <!-- Уникальное основное содержимое страницы -->
  <main>
-     <h1>Добро пожаловать на наш сайт!</h1>
-         <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
+
  <!-- Секция 1 с якорем -->
  <section id="services">
      <div class="cards-section">
          <h2 class="section-title">Наши Услуги</h2>
-         <div class="cards-container">
+         <div class="cards-container-1">
              <div class="card">
                  <div class="card-content card-title">
                      <h3>Личные хоррор-квесты</h3>
@@ -96,18 +96,19 @@
          <h2 class="section-title">Портфолио</h2>
 
          <div class="row">
-             <img src="assets/house.jpg" alt="">
-             <img src="assets/hospital.jpg" alt="">
+             <img src="assets/house.jpg" alt="" class="img-responsive">
+             <img src="assets/hospital.jpg" alt="" class="img-responsive">
          </div>
 
-         <div class="cards-container">
+         <div class="cards-container-2">
              <div class="card">
                  <div class="card-content card-title">
                      <h3>Дом забытых душ</h3>
                  </div>
                  <div class="card-content card-description">
                      <p>Локация: заброшенный особняк</p>
-                     <p>Особенности: актёры в роли «жителей дома», система скрытых комнат и тайных ходов, аудио сопровождение с эффектом присутствия.</p>
+                     <p>Особенности: актёры в роли «жителей дома», система скрытых комнат и тайных ходов, аудио сопровождение с эффектом присутствия</p>
+                     <p>Реквизит: скелеты, кровь, кладбища, черепа</p>
                  </div>
              </div>
              <div class="card">
@@ -116,7 +117,7 @@
                  </div>
                  <div class="card-content card-description">
                      <p>Локация: развлекательный центр</p>
-                     <p>Особенности: полноценный сюжет с актёрами-пациентами, звуковые спецэффекты, тематический грим, возможность выбрать уровень страха.</p>
+                     <p>Особенности: полноценный сюжет с актёрами-пациентами, звуковые спецэффекты, тематический грим, возможность выбрать уровень</p>
                  </div>
              </div>
          </div>
@@ -136,49 +137,52 @@
         <p>Телефон: +7 (123) 456-78-90</p>
 
 
-        <video controls preload="metadata" playsinline>
+        <video controls preload="metadata" playsinline class="img-responsive">
             <source src="assets/RICKROLL.mp4" type="video/mp4">
-        </video>
+         </video>
+
+
 
         <h2>Наша почта</h2>
-        <p1>Сотрудничество: StrashnoOchenStrashno_sotr@mail.com</p1>
+        <p class = "p1">Сотрудничество: StrashnoOchenStrashno_sotr@mail.com</p>
+        <!-- Кнопка открытия модалки -->
+        <button id="openDialog" type="button">Тех. поддержка</button>
+        <!-- Модалка с формой -->
+        <dialog id="contactDialog" aria-labelledby="dialogTitle">
+            <h2 id="dialogTitle">Тех. поддержка</h2>
+            <form id="contactForm" method="dialog" novalidate>
+                <label for="name">Имя</label>
+                <input id="name" name="name" type="text" required minlength="2"
+                       autocomplete="given-name">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" required
+                       autocomplete="email">
+                <label for="phone">Телефон</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel"
+                       autocomplete="tel"
+                       aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__"
+                       required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+                <label for="date">Дата</label>
+                <input id="date" name="date" type="date" required>
+                <label for="topic">Тема</label>
+                <select id="topic" name="topic" required>
+                    <option value="">Выберите тему</option>
+                    <option>Вопрос</option>
+                    <option>Заказ</option>
+                </select>
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <div class="form-actions">
+                    <button type="button" id="closeDialog">Закрыть</button>
+                    <button type="submit">Отправить</button>
+                </div>
+            </form>
+        </dialog>
 
     </div>
 
-     <!-- Кнопка открытия модалки -->
-     <button id="openDialog" type="button">Тех. поддержка</button>
-     <!-- Модалка с формой -->
-     <dialog id="contactDialog" aria-labelledby="dialogTitle">
-         <h2 id="dialogTitle">Тех. поддержка</h2>
-         <form id="contactForm" method="dialog" novalidate>
-             <label for="name">Имя</label>
-             <input id="name" name="name" type="text" required minlength="2"
-                    autocomplete="given-name">
-             <label for="email">E-mail</label>
-             <input id="email" name="email" type="email" required
-                    autocomplete="email">
-             <label for="phone">Телефон</label>
-             <input id="phone" name="phone" type="tel" inputmode="tel"
-                    autocomplete="tel"
-                    aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__"
-                    required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
-             <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
-             <label for="date">Дата</label>
-             <input id="date" name="date" type="date" required>
-             <label for="topic">Тема</label>
-             <select id="topic" name="topic" required>
-                 <option value="">Выберите тему</option>
-                 <option>Вопрос</option>
-                 <option>Заказ</option>
-             </select>
-             <label for="message">Сообщение</label>
-             <textarea id="message" name="message" rows="4" required></textarea>
-             <div class="form-actions">
-                 <button type="button" id="closeDialog">Закрыть</button>
-                 <button type="submit">Отправить</button>
-             </div>
-         </form>
-     </dialog>
+
 
  </section>
  </main>

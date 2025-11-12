@@ -1,12 +1,12 @@
 :root {
-    /* Палитра */
+
     --color-bg: #242529;
     --color-fg: #d60b0b;
     --color-muted: #ffffff;
     --color-primary: #0061ff;
-    --color-danger: #b00020;
+    --color-danger: #ffffff;
 
-    /* Типографика и размеры */
+
     --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     --space-1: 4px;
     --space-2: 8px;
@@ -14,7 +14,7 @@
     --space-4: 24px;
     --space-5: 40px;
 
-    /* Скругления и тени */
+
     --radius: 12px;
     --shadow: 0 1px 2px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.08);
 }
@@ -39,7 +39,12 @@ dialog::backdrop { background: rgba(0,0,0,.5); }
     max-width: 1200px;
     background: linear-gradient(135deg, #4d4e50 0%, #191c22 100%);
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+
+    width: 95%;
+    transition: all 0.3s ease;
 }
+
 
 .section-title {
     text-align: center;
@@ -66,11 +71,18 @@ dialog::backdrop { background: rgba(0,0,0,.5); }
 
 
 
-.cards-container {
+.cards-container-1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
+}
+
+.cards-container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 120px;
 }
 
 .card-content {
@@ -110,6 +122,22 @@ dialog::backdrop { background: rgba(0,0,0,.5); }
     transform: translateY(0);
 }
 
+
+.video-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: start;
+}
+
+.video-wrapper {
+    grid-column: 2;
+}
+
+.text-content {
+    grid-column: 1;
+}
+
 h3, p {
     margin: 0;
     color: white;
@@ -119,21 +147,26 @@ h3, p {
 h3 { font-size: 28px; }
 p { line-height: 1.6; font-size: 16px; }
 
-p1 {
+.p1 {
     margin: 0;
     color: #3498db;
 }
 
-.row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.img-responsive {
+    max-width: 50%;
+    width: auto;
+    height: auto;
+    display: block;
 }
 
-.row img {
-    width: 500px;
-    height: 500px;
+.row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
 }
+
 
 .header-wrapper {
     max-width: 1200px;
@@ -143,6 +176,10 @@ p1 {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+
+    width: 95%;
+    transition: all 0.3s ease;
 }
 
 header {
@@ -176,7 +213,7 @@ nav ul {
 
 
 
-/* БАЗА: читаемость и предсказуемость размеров */
+
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
@@ -186,7 +223,7 @@ body {
     background: var(--color-bg);
     color: var(--color-fg);
 }
-/* Формы: размеры, отступы, визуальный порядок */
+
 label { display: block; margin: 0.5rem 0 0.25rem; }
 input, select, textarea, button {
  width: 100%;
@@ -197,30 +234,119 @@ input, select, textarea, button {
  background: #fff;
 }
 
-/* Состояния ссылок */
+
 .nav__link:link { color: var(--color-fg); }
 .nav__link:visited { color: var(--color-muted); }
 .nav__link:hover { color: var(--color-primary); }
 .nav__link:active { opacity: 0.8; }
 
-/* Фокус для всех интерактивных элементов */
+
 :where(a, button, input, select, textarea):focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
-/* Кнопка по умолчанию */
+
 button, [type="submit"] {
  background: #7e1212;
  color: #fff;
  border: none;
  cursor: pointer;
 }
-/* Состояния: клавиатура/мышь/ошибки */
+
 :where(input, select, textarea, button):focus-visible {
  outline: 2px solid #0a84ff; outline-offset: 2px;
 }
 button:hover { filter: brightness(0.95); }
 :disabled, [aria-disabled="true"] { opacity: .6; cursor: not-allowed; }
-/* Подсветка ошибочных полей (установите aria-invalid="true") */
 [aria-invalid="true"] { border-color: #b00020; }
+
+
+@media (max-width: 480px) {
+    .row {
+        gap: 10px;
+        padding: 5px;
+        flex-direction: row;
+        align-items: center;
+    }
+    .header-wrapper {
+        margin: 5px;
+        width: calc(100% - 10px);
+        border-width: 1px;
+        border-radius: 8px;
+    }
+}
+
+@media (min-width: 480px) {
+    .row {
+        gap: 10px;
+        padding: 5px;
+        flex-direction: row;
+        align-items: center;
+    }
+    .header-wrapper {
+        margin: 5px;
+        width: calc(100% - 10px);
+        border-width: 1px;
+        border-radius: 8px;
+    }
+}
+
+@media (min-width: 768px) {
+    .cards-section {
+        width: 90%;
+        margin: 40px auto;
+    }
+    .row {
+        flex-direction: row;
+        gap: 15px;
+        padding: 10px;
+        justify-content: space-around;
+    }
+    .header-wrapper {
+        max-width: 100%;
+        margin: 10px;
+        width: calc(100% - 20px);
+        border-width: 2px;
+        border-radius: 10px;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .cards-section {
+        max-width: 1200px;
+        margin: 40px auto;
+    }
+    .header-wrapper {
+        max-width: 95%;
+        margin: 15px auto;
+        border-width: 2px;
+        border-radius: 12px;
+    }
+    .row {
+        justify-content: center;
+        gap: 20px;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header-wrapper {
+        margin: 20px auto;
+    }
+}
+
+@media (min-width: 1440px) {
+    .cards-section {
+        max-width: 1400px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .header-wrapper {
+        max-width: 1400px;
+        margin: 30px auto;
+    }
+}
+

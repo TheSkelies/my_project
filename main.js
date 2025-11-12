@@ -61,7 +61,6 @@ form?.addEventListener('submit', (e) => {
  }
  // 3) Успешная «отправка» (без сервера)
  e.preventDefault();
- alert("Письмо отправленно (умрёте через 7 дней)");
  dlg.close();
  form.reset();
  // Если форма внутри <dialog>, закрываем окно:
