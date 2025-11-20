@@ -1,7 +1,7 @@
 :root {
 
     --color-bg: #242529;
-    --color-fg: #d60b0b;
+    --color-fg: #0d6efd;
     --color-muted: #ffffff;
     --color-primary: #0061ff;
     --color-danger: #ffffff;
@@ -50,7 +50,7 @@ dialog::backdrop { background: rgba(0,0,0,.5); }
     text-align: center;
     color: #ffffff;
     margin-bottom: 30px;
-    font-size: 2.5rem;
+    font-size: 200%;
     border-bottom: 2px solid #3498db;
     padding-bottom: 10px;
 }
@@ -105,7 +105,6 @@ dialog::backdrop { background: rgba(0,0,0,.5); }
 .card-description {
     opacity: 0;
     overflow-y: auto;
-    max-height: 100%;
 }
 
 .card:hover {
@@ -149,7 +148,12 @@ p { line-height: 1.6; font-size: 16px; }
 
 .p1 {
     margin: 0;
-    color: #3498db;
+    color: #b00020;
+}
+
+.p2 {
+    margin: 0;
+    color: var(--color-fg);
 }
 
 .img-responsive {
@@ -211,7 +215,17 @@ nav ul {
 
 
 
+.small-screen-font {
 
+}
+
+.nav-flex {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
 
 
 * { box-sizing: border-box; }
@@ -241,6 +255,7 @@ input, select, textarea, button {
 .nav__link:active { opacity: 0.8; }
 
 
+
 :where(a, button, input, select, textarea):focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
@@ -263,6 +278,22 @@ button:hover { filter: brightness(0.95); }
 
 
 @media (max-width: 480px) {
+
+
+    .nav-flex {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: table;
+        gap: 30px;
+    }
+    .small-screen-font {
+        font-size: 22px;
+    }
+    .card-description {
+        max-height: calc(100% - 5px);
+        max-width: calc(100% - 5px);
+    }
     .row {
         gap: 10px;
         padding: 5px;
@@ -278,6 +309,17 @@ button:hover { filter: brightness(0.95); }
 }
 
 @media (min-width: 480px) {
+    .nav-flex {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: table;
+        gap: 30px;
+    }
+
+    .nav__list {
+        white-space: nowrap;
+    }
     .row {
         gap: 10px;
         padding: 5px;
@@ -293,6 +335,14 @@ button:hover { filter: brightness(0.95); }
 }
 
 @media (min-width: 768px) {
+    .nav-flex {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 30px;
+    }
+
     .cards-section {
         width: 90%;
         margin: 40px auto;
